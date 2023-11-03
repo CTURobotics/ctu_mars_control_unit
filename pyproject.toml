@@ -23,14 +23,8 @@ lint = [
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
-
-[tool.pdm.scripts.lint]
-shell = """
-    ruff check src tests
-    black --check --diff --verbose src tests
-"""
-
-[tool.pdm.scripts.format]
-shell = """
-    black src tests
-"""
+[tool.pdm.scripts]
+ruff = "ruff check src tests"
+black = "black --check --diff --verbose src tests"
+format = "black src tests"
+lint = { composite = ["ruff", "black"] }
