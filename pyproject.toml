@@ -1,6 +1,6 @@
 [project]
 name = "ctu_mars_control_unit"
-version = "0.1.0"
+version = "0.1.1"
 description = "MARS control unit that is used to control robots at CIIRC/CTU"
 authors = [
     { name = "Vladimir Petrik", email = "vladimir.petrik@cvut.cz" },
