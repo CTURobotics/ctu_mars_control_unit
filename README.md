@@ -12,4 +12,4 @@ Additional information to MARS8 control unit can be found at
 or [PDF](https://cmp.felk.cvut.cz/~pisa/mars8/mars8_man_cz.pdf).
 
 ## Example connection of MARS control unit
-![](doc/mars_unit_usage.png)
+![](https://raw.githubusercontent.com/CTURobotics/ctu_mars_control_unit/main/doc/mars_unit_usage.png)
