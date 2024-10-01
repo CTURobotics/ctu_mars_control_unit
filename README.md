@@ -13,3 +13,12 @@ or [PDF](https://cmp.felk.cvut.cz/~pisa/mars8/mars8_man_cz.pdf).
 
 ## Example connection of MARS control unit
 ![](https://raw.githubusercontent.com/CTURobotics/ctu_mars_control_unit/main/doc/mars_unit_usage.png)
+
+
+## Acknowledgment
+
+Preparation of the course materials was partially supported by:
+
+![](https://raw.githubusercontent.com/CTURobotics/ctu_mars_control_unit/main/doc/NPO-publicity-logo_crop.png)
+
+
