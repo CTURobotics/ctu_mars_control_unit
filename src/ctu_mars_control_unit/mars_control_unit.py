@@ -70,14 +70,17 @@ class MarsControlUnit:
         """Send command to the control unit via self._connection."""
         self._connection.write(bytearray(cmd, "ascii"))
 
-    def read_response(self, maxbytes: int = 1024) -> str | None:
+    def read_response(self, maxbytes: int = 1024, decode=True) -> str | None:
         """Read response from control unit.
         :arg maxbytes: Max number of bytes to read.
+        :param decode: Boolean, whether to decode the response to ascii.
         :return Response from control unit or None if no response in a short time.
         """
         resp = self._connection.read(maxbytes)
         if resp is None:
             return None
+        if not decode:
+            return resp
         return resp.decode("ascii").replace("\r\n", "\n").replace("\r", "\n")
 
     def sync_cmd_fifo(self):
@@ -121,7 +124,9 @@ class MarsControlUnit:
 
     def init_communication(self, print_firmware_version: bool = True):
         """Initialize communication through the serial interface."""
-        self.read_response()
+        # The control unit can send some nonsense data on the serial line after power up
+        # therefore we are nto decoding the first response.
+        self.read_response(decode=False)
         self.send_cmd("\nECHO:0\n")
         self.sync_cmd_fifo()
         s = self.query("VER")
